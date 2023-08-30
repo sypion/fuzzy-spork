@@ -1,12 +1,22 @@
+// Let the computer choose first
 function getComputerChoice() {
-    let choices = ["Rock", "Paper", "Scissors"];
+    let choices = ["rock", "paper", "scissors"];
 
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-let playerSelection = "Paper"
+// Prompt the player for their choice
+function getPlayerChoice() {
+    let playerSelection;
+    playerSelection = prompt("What's your move: rock, paper or scissors?")
+    playerSelection = playerSelection.toLowerCase();
+    return playerSelection;
+}
 
-computerSelection = getComputerChoice();
+let computerSelection = getComputerChoice();
+let playerSelection = getPlayerChoice();
+
+// On your marks!
 
 let playerScore = 0
 let computerScore = 0
@@ -14,16 +24,16 @@ let computerScore = 0
 function playRound(playerSelection, computerSelection) {
 
     if (
-		(playerSelection === "Rock" && computerSelection === "Scissors") ||
-		(playerSelection === "Paper" && computerSelection === "Rock") ||
-		(playerSelection === "Scissors" && computerSelection === "Paper")
+		(playerSelection === "rock" && computerSelection === "scissors") ||
+		(playerSelection === "paper" && computerSelection === "rock") ||
+		(playerSelection === "scissors" && computerSelection === "paper")
 	) {
 		playerScore += 1
         console.log("You chose " + playerSelection + " and the computer chose " + computerSelection + ". You win this round!")
     } else if (
-        (computerSelection === "Rock" && playerSelection === "Scissors") ||
-		(computerSelection === "Paper" && playerSelection === "Rock") ||
-		(computerSelection === "Scissors" && playerSelection === "Paper")
+        (computerSelection === "rock" && playerSelection === "scissors") ||
+		(computerSelection === "paper" && playerSelection === "rock") ||
+		(computerSelection === "scissors" && playerSelection === "paper")
     ) {
         computerScore += 1
         console.log("You chose " + playerSelection + " and the computer chose " + computerSelection + ". The computer wins this round!")
@@ -34,5 +44,7 @@ function playRound(playerSelection, computerSelection) {
     }
 
 };
+
+// Output result in console
 
 console.log(playRound(playerSelection, computerSelection));
