@@ -4,14 +4,9 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function getPlayerChoice() {
-    let choices = ["Rock", "Paper", "Scissors"];
-
-    return choices[Math.floor(Math.random() * choices.length)];
-}
+let playerSelection = "Paper"
 
 computerSelection = getComputerChoice();
-playerSelection = getPlayerChoice();
 
 let playerScore = 0
 let computerScore = 0
