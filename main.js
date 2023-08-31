@@ -9,17 +9,21 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let playerSelection;
     playerSelection = prompt("What's your move: rock, paper or scissors?")
-    playerSelection = playerSelection.toLowerCase();
+    playerSelection = playerSelection.toLowerCase(); // always output the user's answer lowercase
     return playerSelection;
 }
+
+// On your marks!
 
 let computerSelection = getComputerChoice();
 let playerSelection = getPlayerChoice();
 
-// On your marks!
+// Get set...
 
 let playerScore = 0
 let computerScore = 0
+
+// Go!
 
 function playRound(playerSelection, computerSelection) {
 
@@ -30,6 +34,7 @@ function playRound(playerSelection, computerSelection) {
 	) {
 		playerScore += 1
         console.log("You chose " + playerSelection + " and the computer chose " + computerSelection + ". You win this round!")
+        console.log("The score is now " + playerScore +"! Onwards and upwards.")
     } else if (
         (computerSelection === "rock" && playerSelection === "scissors") ||
 		(computerSelection === "paper" && playerSelection === "rock") ||
@@ -37,10 +42,12 @@ function playRound(playerSelection, computerSelection) {
     ) {
         computerScore += 1
         console.log("You chose " + playerSelection + " and the computer chose " + computerSelection + ". The computer wins this round!")
+        console.log("The score is now " + playerScore +"! Keep going.")
     } else if (
         (playerSelection === computerSelection)
     ) {
         console.log("Looks like it\'s a tie, as you both chose " + playerSelection + "!")
+        console.log("The score is now " + playerScore +"!")
     }
 
 };
