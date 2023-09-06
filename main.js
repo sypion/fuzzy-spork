@@ -8,7 +8,7 @@ const SCISSORS = 'scissors';
 // Let the computer choose first
 function getComputerChoice() {
     let choices = ["rock", "paper", "scissors"];
-    return choices[Math.floor(Math.random() * choices.length)];
+    return choices[Math.floor(Math.random() * choices.Length)];
 }
 
 // Prompt the player for their choice
@@ -19,7 +19,7 @@ function getPlayerChoice() {
         playerSelection = prompt("What's your move: rock, paper or scissors?")
         playerSelection = playerSelection.toLowerCase(); // always output the user's answer lowercase
 
-        // Ensure that what was entered is 
+        // Ensure that what was entered is equated to available choices
         if (playerSelection === ROCK || playerSelection === PAPER || playerSelection === SCISSORS) {
             validInput = true;
         }
